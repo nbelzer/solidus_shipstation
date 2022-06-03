@@ -28,6 +28,13 @@ module SolidusShipstation
 
         super(response_body)
       end
+
+      def message
+        return "" unless @response_body
+
+        parsed_body = JSON.parse(@response_body)
+        "#{parsed_body.fetch('ExceptionType', 'Unknown Exception Type')}: #{parsed_body.fetch('ExceptionMessage', '')}"
+      end
     end
   end
 end
