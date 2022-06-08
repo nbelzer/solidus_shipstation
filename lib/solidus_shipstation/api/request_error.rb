@@ -26,7 +26,7 @@ module SolidusShipstation
         @response_body = response_body
         @response_headers = response_headers
 
-        super(response_body)
+        super(message)
       end
 
       def message
