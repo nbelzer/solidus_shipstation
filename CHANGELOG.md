@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.0
+
+**Breaking changes**
+
+- The default message for a `RequestError` has been changed from the response body of the response instead include a parsed version of this body.  If your code depends on the response body you need to access it through the `.response_body` attribute on the error instead.
+  ```ruby
+  # before
+  error.message
+
+  # after
+  error.response_body
+  ```
+
 ## [v1.1.0](https://github.com/solidusio-contrib/solidus_shipstation/tree/v1.1.0) (2021-10-26)
 
 [Full Changelog](https://github.com/solidusio-contrib/solidus_shipstation/compare/v1.0.0...v1.1.0)
